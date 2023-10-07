@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "MiBancoService.Application.Contracts/1.0.0": {
+        "dependencies": {
+          "MiBancoService.Application.DTOs": "1.0.0"
+        },
         "runtime": {
           "MiBancoService.Application.Contracts.dll": {}
+        }
+      },
+      "MiBancoService.Application.DTOs/1.0.0": {
+        "runtime": {
+          "MiBancoService.Application.DTOs.dll": {}
         }
       }
     }
   },
   "libraries": {
     "MiBancoService.Application.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MiBancoService.Application.DTOs/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

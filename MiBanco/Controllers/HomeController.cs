@@ -8,6 +8,13 @@ namespace MiBanco.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly MiBancoService.Application.Contracts.Services.IClienteService _clienteService;
+
+        public HomeController(MiBancoService.Application.Contracts.Services.IClienteService clienteService)
+        {
+            _clienteService = clienteService;        
+        }
+
         public ActionResult Index()
         {
             return View();

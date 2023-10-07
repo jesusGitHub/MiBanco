@@ -1,12 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net4.8</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Connections\" />
-    <Folder Include="Repositories\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiBancoService.Infrastructure.Contracts\MiBancoService.Infrastructure.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

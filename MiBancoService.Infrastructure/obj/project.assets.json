@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    ".NETFramework,Version=v4.8": {
+      "MiBancoService.Application.DTOs/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "compile": {
+          "bin/placeholder/MiBancoService.Application.DTOs.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MiBancoService.Application.DTOs.dll": {}
+        }
+      },
+      "MiBancoService.Infrastructure.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "MiBancoService.Application.DTOs": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MiBancoService.Infrastructure.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MiBancoService.Infrastructure.Contracts.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MiBancoService.Application.DTOs/1.0.0": {
+      "type": "project",
+      "path": "../MiBancoService.Application.DTOs/MiBancoService.Application.DTOs.csproj",
+      "msbuildProject": "../MiBancoService.Application.DTOs/MiBancoService.Application.DTOs.csproj"
+    },
+    "MiBancoService.Infrastructure.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../MiBancoService.Infrastructure.Contracts/MiBancoService.Infrastructure.Contracts.csproj",
+      "msbuildProject": "../MiBancoService.Infrastructure.Contracts/MiBancoService.Infrastructure.Contracts.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    ".NETFramework,Version=v4.8": [
+      "MiBancoService.Infrastructure.Contracts >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\jsoriano\\.nuget\\packages\\": {},
@@ -34,7 +71,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0"
+        "net48"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -43,9 +80,13 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "projectReferences": {}
+        "net48": {
+          "targetAlias": "net4.8",
+          "projectReferences": {
+            "C:\\Users\\jsoriano\\Documents\\Visual Studio 2019\\Proyect2\\MiBancoService.Infrastructure.Contracts\\MiBancoService.Infrastructure.Contracts.csproj": {
+              "projectPath": "C:\\Users\\jsoriano\\Documents\\Visual Studio 2019\\Proyect2\\MiBancoService.Infrastructure.Contracts\\MiBancoService.Infrastructure.Contracts.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -55,23 +96,8 @@
       }
     },
     "frameworks": {
-      "net5.0": {
-        "targetAlias": "net5.0",
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
+      "net48": {
+        "targetAlias": "net4.8",
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.122\\RuntimeIdentifierGraph.json"
       }
     }

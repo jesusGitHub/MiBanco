@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "VuMrsvds+sQy0hw2Z8a7Hl5Sn4g0dxwL+tsBA3gzA0p3Pc7xB9YTXWgfhMEAnRGnUQUYG+IhUCdTMlDwPrUBJw==",
+  "dgSpecHash": "8dnF6SBs+KDMf3etiR3spknWsKeO58NMweT+wqoNFkbQuCEHh9elefb13sXiRqpMuBnJ1KRqKSES/t4UxJjQGw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jsoriano\\Documents\\Visual Studio 2019\\Proyect2\\MiBancoService.CrossCutting\\MiBancoService.CrossCutting.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jsoriano\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\jsoriano\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\jsoriano\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
+    "C:\\Users\\jsoriano\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+  ],
   "logs": []
 }

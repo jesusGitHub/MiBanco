@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net4.8</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MiBancoService.Application.Contracts\MiBancoService.Application.Contracts.csproj" />
     <ProjectReference Include="..\MiBancoService.Application.DTOs\MiBancoService.Application.DTOs.csproj" />
+    <ProjectReference Include="..\MiBancoService.Infrastructure.Contracts\MiBancoService.Infrastructure.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
