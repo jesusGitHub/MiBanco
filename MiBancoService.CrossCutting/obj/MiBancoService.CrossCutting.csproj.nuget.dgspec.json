@@ -326,6 +326,12 @@
       "frameworks": {
         "net48": {
           "targetAlias": "net4.8",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.4, )"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.122\\RuntimeIdentifierGraph.json"
         }
       }

@@ -1,5 +1,6 @@
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure\bin\Debug\net4.8\MiBancoService.Infrastructure.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure\bin\Debug\net4.8\MiBancoService.Infrastructure.pdb
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure\bin\Debug\net4.8\Dapper.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure\bin\Debug\net4.8\MiBancoService.Application.DTOs.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure\bin\Debug\net4.8\MiBancoService.Infrastructure.Contracts.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure\bin\Debug\net4.8\MiBancoService.Infrastructure.Contracts.pdb

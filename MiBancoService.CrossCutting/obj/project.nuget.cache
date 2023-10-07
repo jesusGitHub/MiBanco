@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8dnF6SBs+KDMf3etiR3spknWsKeO58NMweT+wqoNFkbQuCEHh9elefb13sXiRqpMuBnJ1KRqKSES/t4UxJjQGw==",
+  "dgSpecHash": "CwirK4yUHfX7W7Ne4Onrf2wdkh8F9lsIKVMeh1Xn0YKw2RjcvKjeRe2IoR0uSaRBbB28QFjg2oCLnHGxbmL4bg==",
   "success": true,
   "projectFilePath": "C:\\Users\\jsoriano\\Documents\\Visual Studio 2019\\Proyect2\\MiBancoService.CrossCutting\\MiBancoService.CrossCutting.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\jsoriano\\.nuget\\packages\\dapper\\2.1.4\\dapper.2.1.4.nupkg.sha512",
     "C:\\Users\\jsoriano\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\jsoriano\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\jsoriano\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",

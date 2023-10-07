@@ -6,6 +6,8 @@ namespace MiBanco.App_Start
     using System.Web.Mvc;
     using MiBancoService.Application.Contracts.Services;
     using MiBancoService.Application.Services;
+    using MiBancoService.Infrastructure.Connections;
+    using MiBancoService.Infrastructure.Contracts.Connections;
     using MiBancoService.Infrastructure.Contracts.Repositories;
     using MiBancoService.Infrastructure.Repositories;
     using SimpleInjector;
@@ -37,6 +39,8 @@ namespace MiBanco.App_Start
 
             //Repository
             container.Register<IClienteRepository, ClienteRepository>(Lifestyle.Scoped);
+
+            
         }
     }
 }
