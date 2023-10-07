@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jkT+/0249mbItNWeJdJsPcUX/f5Pf7lk5PY77Ulp+RZPG7SruWNXoTFUWKd5ZXtri2+MTtCapHzbcDPluI97og==",
+  "dgSpecHash": "WR1A5NPFyQ1k94uYdOjgMFxZlGhF+k+C2jrkiiCTHAFYFljttxakblFNxVVK3Eb12UYpnILAm8RnuZ/bt+GErA==",
   "success": true,
   "projectFilePath": "C:\\Users\\jsoriano\\Documents\\Visual Studio 2019\\Proyect2\\MiBancoService.Infrastructure\\MiBancoService.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jsoriano\\.nuget\\packages\\dapper\\2.1.4\\dapper.2.1.4.nupkg.sha512"
+  ],
   "logs": []
 }

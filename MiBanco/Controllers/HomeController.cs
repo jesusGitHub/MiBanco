@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MiBancoService.Application.Contracts.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,17 @@ namespace MiBanco.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IClienteService _clienteService;
+
+        public HomeController(IClienteService clienteService)
+        {
+            _clienteService = clienteService;        
+        }
+
         public ActionResult Index()
         {
+            var Result =_clienteService.ObtenerCliente();
+
             return View();
         }
 

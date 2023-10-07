@@ -15,17 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastruture", "Infrastrut
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiBancoService.Application", "..\MiBancoService.Application\MiBancoService.Application.csproj", "{99021C80-DB37-4CC7-BCB6-B5272BB1595F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBancoService.Application.Contracts", "..\MiBancoService.Application.Contracts\MiBancoService.Application.Contracts.csproj", "{3F1AFB15-C224-4422-BC0C-B3D75CEDBD10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiBancoService.Application.Contracts", "..\MiBancoService.Application.Contracts\MiBancoService.Application.Contracts.csproj", "{3F1AFB15-C224-4422-BC0C-B3D75CEDBD10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBancoService.Application.DTOs", "..\MiBancoService.Application.DTOs\MiBancoService.Application.DTOs.csproj", "{3F8F74F7-4415-482D-8A8A-895E57001B24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiBancoService.Application.DTOs", "..\MiBancoService.Application.DTOs\MiBancoService.Application.DTOs.csproj", "{3F8F74F7-4415-482D-8A8A-895E57001B24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBancoService.CrossCutting", "..\MiBancoService.CrossCutting\MiBancoService.CrossCutting.csproj", "{58BB060C-DFC7-4112-A58C-79DD855DA41B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiBancoService.CrossCutting", "..\MiBancoService.CrossCutting\MiBancoService.CrossCutting.csproj", "{58BB060C-DFC7-4112-A58C-79DD855DA41B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBancoService.Domain", "..\MiBancoService.Domain\MiBancoService.Domain.csproj", "{52E0D69F-CD71-43FB-8DCC-62CAAB4DFE4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiBancoService.Domain", "..\MiBancoService.Domain\MiBancoService.Domain.csproj", "{52E0D69F-CD71-43FB-8DCC-62CAAB4DFE4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBancoService.Infrastructure.Contracts", "..\MiBancoService.Infrastructure.Contracts\MiBancoService.Infrastructure.Contracts.csproj", "{884898CF-A00D-430C-A3D5-43E89294A39E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiBancoService.Infrastructure.Contracts", "..\MiBancoService.Infrastructure.Contracts\MiBancoService.Infrastructure.Contracts.csproj", "{884898CF-A00D-430C-A3D5-43E89294A39E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiBancoService.Infrastructure", "..\MiBancoService.Infrastructure\MiBancoService.Infrastructure.csproj", "{D4E30730-DB67-486F-AA06-DD9C71903FE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiBancoService.Infrastructure", "..\MiBancoService.Infrastructure\MiBancoService.Infrastructure.csproj", "{D4E30730-DB67-486F-AA06-DD9C71903FE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
