@@ -1,0 +1,11 @@
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\bin\Debug\net5.0\MiBancoService.Application.deps.json
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\bin\Debug\net5.0\MiBancoService.Application.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\bin\Debug\net5.0\ref\MiBancoService.Application.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\bin\Debug\net5.0\MiBancoService.Application.pdb
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\obj\Debug\net5.0\MiBancoService.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\obj\Debug\net5.0\MiBancoService.Application.AssemblyInfoInputs.cache
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\obj\Debug\net5.0\MiBancoService.Application.AssemblyInfo.cs
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\obj\Debug\net5.0\MiBancoService.Application.csproj.CoreCompileInputs.cache
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\obj\Debug\net5.0\MiBancoService.Application.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\obj\Debug\net5.0\ref\MiBancoService.Application.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application\obj\Debug\net5.0\MiBancoService.Application.pdb

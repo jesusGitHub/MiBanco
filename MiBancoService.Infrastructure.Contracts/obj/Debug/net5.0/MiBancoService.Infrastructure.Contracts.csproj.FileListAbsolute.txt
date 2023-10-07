@@ -1,0 +1,12 @@
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net5.0\MiBancoService.Infrastructure.Contracts.deps.json
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net5.0\MiBancoService.Infrastructure.Contracts.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net5.0\ref\MiBancoService.Infrastructure.Contracts.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net5.0\MiBancoService.Infrastructure.Contracts.pdb
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net5.0\MiBancoService.Infrastructure.Contracts.csproj.AssemblyReference.cache
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net5.0\MiBancoService.Infrastructure.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net5.0\MiBancoService.Infrastructure.Contracts.AssemblyInfoInputs.cache
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net5.0\MiBancoService.Infrastructure.Contracts.AssemblyInfo.cs
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net5.0\MiBancoService.Infrastructure.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net5.0\MiBancoService.Infrastructure.Contracts.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net5.0\ref\MiBancoService.Infrastructure.Contracts.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net5.0\MiBancoService.Infrastructure.Contracts.pdb
