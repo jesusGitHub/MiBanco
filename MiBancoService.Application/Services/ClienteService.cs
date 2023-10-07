@@ -20,9 +20,9 @@ namespace MiBancoService.Application.Services
         }
 
 
-        public Task<IEnumerable<ClienteDTO>> ObtenerCliente()
+        public async Task<IEnumerable<ClienteDTO>> ObtenerCliente()
         {
-
+           return await  _clienteRepository.ObtenerCliente();
 
             throw new NotImplementedException();
         }

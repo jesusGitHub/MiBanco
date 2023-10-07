@@ -20,6 +20,7 @@ namespace MiBancoService.Infrastructure.Connections
 
             //Lo recomendable seria que el connectionString se obtubiera del Environment
             //Como se ve en este comentario pero como es una prueba  para menos estres lo pondre directamente.
+           
             //Connection = new SqlConnection(Environment.GetEnvironmentVariable("BancoDB"));
 
             Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=MiBanco;Data Source=AFPLPT-91");

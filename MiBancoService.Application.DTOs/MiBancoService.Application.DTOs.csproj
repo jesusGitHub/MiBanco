@@ -4,4 +4,8 @@
     <TargetFramework>net4.8</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+
 </Project>

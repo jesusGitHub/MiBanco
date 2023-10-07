@@ -12,4 +12,8 @@
     <ProjectReference Include="..\MiBancoService.Infrastructure.Contracts\MiBancoService.Infrastructure.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+  </ItemGroup>
+
 </Project>

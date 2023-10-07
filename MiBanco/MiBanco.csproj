@@ -242,6 +242,10 @@
       <Project>{3f1afb15-c224-4422-bc0c-b3d75cedbd10}</Project>
       <Name>MiBancoService.Application.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MiBancoService.Application.DTOs\MiBancoService.Application.DTOs.csproj">
+      <Project>{3F8F74F7-4415-482D-8A8A-895E57001B24}</Project>
+      <Name>MiBancoService.Application.DTOs</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MiBancoService.Application\MiBancoService.Application.csproj">
       <Project>{99021C80-DB37-4CC7-BCB6-B5272BB1595F}</Project>
       <Name>MiBancoService.Application</Name>

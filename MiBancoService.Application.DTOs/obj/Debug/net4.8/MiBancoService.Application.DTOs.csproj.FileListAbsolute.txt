@@ -6,3 +6,4 @@ C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Applicati
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application.DTOs\obj\Debug\net4.8\MiBancoService.Application.DTOs.csproj.CoreCompileInputs.cache
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application.DTOs\obj\Debug\net4.8\MiBancoService.Application.DTOs.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application.DTOs\obj\Debug\net4.8\MiBancoService.Application.DTOs.pdb
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Application.DTOs\obj\Debug\net4.8\MiBancoService.Application.DTOs.csproj.AssemblyReference.cache
