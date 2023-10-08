@@ -207,3 +207,5 @@ C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBanco\bin\MiBancoServi
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBanco\bin\MiBancoService.Infrastructure.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBanco\bin\MiBancoService.Infrastructure.pdb
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBanco\bin\Dapper.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBanco\bin\MiBancoService.Domain.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBanco\bin\MiBancoService.Domain.pdb
