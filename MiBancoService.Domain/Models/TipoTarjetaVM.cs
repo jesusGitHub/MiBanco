@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiBancoService.Domain.Models
 {
-    class TipoTarjeta
+    class TipoTarjetaVM
     {
         public int CodigoTipo { get; set; }
         public string Descripcion { get; set; }

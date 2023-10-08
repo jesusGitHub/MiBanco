@@ -22,3 +22,4 @@ C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.CrossCutt
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.CrossCutting\bin\Debug\net4.8\MiBancoService.Infrastructure.Contracts.pdb
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.CrossCutting\obj\Debug\net4.8\MiBancoService.CrossCutting.csproj.AssemblyReference.cache
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.CrossCutting\obj\Debug\net4.8\MiBancoService.CrossCutting.csproj.CopyComplete
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.CrossCutting\bin\Debug\net4.8\Dapper.dll
