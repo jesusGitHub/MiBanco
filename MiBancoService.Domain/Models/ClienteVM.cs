@@ -22,7 +22,12 @@ namespace MiBancoService.Domain.Models
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Número de contacto incorrecto")]
         public string NumeroContacto { get; set; }
-
         public string Ocupacion { get; set; }
+
+        public string start { get; set; }
+        public int length { get; set; }
+        public string draw { get; set; }
+        public string search { get; set; }
+
     }
 }

@@ -8,15 +8,16 @@ namespace MiBancoService.Infrastructure.Queries
 {
    public static class ClienteQueries
     {
-        public const string GetAllClienteQuery = @"SELECT  
+        public const string GetClienteByCodigoQuery = @"SELECT  
                                                            ClienteId AS Codigo
                                                           ,Nombre
                                                           ,Apellido
                                                           ,NumeroContacto
-                                                          ,Ocupacion
-                                                          ,FechaRegistro
-                                                          ,FechaModificacion
-                                                    FROM MiBanco.dbo.Cliente";
+                                                          ,Ocupacion                                                    
+                                                    FROM MiBanco.dbo.Cliente WHERE ClienteId = @Codigo";
+
+        public const string GetClientesPaginadoQuery = @" SPC_PAGINACION_CLIENTE  @CampoBusqueda,  @LengthPagina, @NumPagina ";
+
 
     }
 }

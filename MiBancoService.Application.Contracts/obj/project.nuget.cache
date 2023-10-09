@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "UUcY0zDrj5wRsPSCrfRZdLqKddp3vhWn8y1Go9zyd7uUEz2qzHawQC0fi3v6rF+O2batguYMJpKS3TU1xIqmdQ==",
+  "dgSpecHash": "+964pV5jILz3xyrKCIESkJC55uGHkjtZsII45IoJt5aashQ2uRywu3bH6dmsyVGZTpFTkKggHSaXQyK333hqHw==",
   "success": true,
   "projectFilePath": "C:\\Users\\jsoriano\\Documents\\Visual Studio 2019\\Proyect2\\MiBancoService.Application.Contracts\\MiBancoService.Application.Contracts.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jsoriano\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.7\\microsoft.aspnet.mvc.5.2.7.nupkg.sha512",
+    "C:\\Users\\jsoriano\\.nuget\\packages\\microsoft.aspnet.razor\\3.2.7\\microsoft.aspnet.razor.3.2.7.nupkg.sha512",
+    "C:\\Users\\jsoriano\\.nuget\\packages\\microsoft.aspnet.webpages\\3.2.7\\microsoft.aspnet.webpages.3.2.7.nupkg.sha512",
+    "C:\\Users\\jsoriano\\.nuget\\packages\\microsoft.web.infrastructure\\1.0.0\\microsoft.web.infrastructure.1.0.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.componentmodel.primitives\\4.3.0\\system.componentmodel.primitives.4.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

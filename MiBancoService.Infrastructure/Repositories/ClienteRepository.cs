@@ -1,8 +1,10 @@
 ﻿using Dapper;
 using MiBancoService.Application.DTOs.Responses;
+using MiBancoService.Domain.Utility;
 using MiBancoService.Infrastructure.Connections;
 using MiBancoService.Infrastructure.Contracts.Connections;
 using MiBancoService.Infrastructure.Contracts.Repositories;
+using MiBancoService.Infrastructure.Queries;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -18,25 +20,79 @@ namespace MiBancoService.Infrastructure.Repositories
        
         BancoBDConnection ConnectionBD = new BancoBDConnection();
 
-    
-        public async Task<IEnumerable<ClienteDTO>> ObtenerCliente()
+        public async Task<OperationResult<ClienteDTO>> GuardarCliente(ClienteDTO dtoCliente)
         {
-            //TODO:Esto se debe hacer en una clase Generica que se le pase el Modelo.
-            //Dapper.SqlMapper.SetTypeMap(
-            //    typeof(ClienteDTO),
-            //        new Dapper.CustomPropertyTypeMap(
-            //            typeof(ClienteDTO),
-            //            (type, columnName) =>
-            //               type.GetProperties().FirstOrDefault(prop =>
-            //                   prop.GetCustomAttributes(false)
-            //                       .OfType<ColumnAttribute>()
-            //                       .Any(attr => attr.Name == columnName))));
+            var Result = new OperationResult<ClienteDTO>() { Success = true, Messages = new List<string> { "Operacion realiazada con exito"} };
 
-            var result = ConnectionBD.Connection.QueryAsync<ClienteDTO>($@"SELECT * FROM Cliente").Result.ToList();
+            try
+            {
 
-            return await ConnectionBD.Connection.QueryAsync<ClienteDTO>($@"SELECT * FROM Cliente");       
-            
+                var parameters = new Dapper.DynamicParameters();
 
+                parameters.Add("ClienteId", dtoCliente.Codigo);
+                parameters.Add("Nombre", dtoCliente.Nombre);
+                parameters.Add("Apellido", dtoCliente.Apellido);
+                parameters.Add("NumeroContacto", dtoCliente.NumeroContacto);
+                parameters.Add("Ocupacion", dtoCliente.Ocupacion);
+
+               var SqlResult = await ConnectionBD.Connection.ExecuteAsync("SPC_GUARDAR_CLIENTE",
+                   parameters, commandType: System.Data.CommandType.StoredProcedure);
+
+                ConnectionBD.CloseConnection();
+
+            }
+            catch (Exception Ex)
+            {
+                Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando la operacion." } };
+
+            }
+
+            return Result;
+
+
+        }
+
+        public async Task<OperationResult<ClienteDTO>> ObtenerCliente(ClienteDTO dtoCliente)
+        {           
+            var Result = new OperationResult<ClienteDTO>() { Success = true, Messages = new List<string> { "Operacion realiazada con exito" } };
+
+            try
+            {
+                string CampoBusqueda = dtoCliente.search;
+                int LengthPagina = dtoCliente.length;
+                int NumPagina = int.Parse(dtoCliente.start);
+
+                var SqlResult = await  ConnectionBD.Connection.QueryAsync<ClienteDTO>(ClienteQueries.GetClientesPaginadoQuery, new { CampoBusqueda = CampoBusqueda, LengthPagina = LengthPagina, NumPagina = NumPagina});
+
+                Result.ResultList = SqlResult.ToList();
+                
+                if(Result.ResultList != null && Result.ResultList.Any() )
+                     Result.TotalRecords = SqlResult.FirstOrDefault().TotalRegistro;
+            }
+            catch (Exception Ex)
+            {
+                Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta paginada." } };
+            }
+
+            return Result;
+        }
+
+        public async Task<OperationResult<ClienteDTO>> ObtenerClienteByCodigo(int codigo)
+        {
+            var Result = new OperationResult<ClienteDTO>() { Success = true, Messages = new List<string> { "Operacion realiazada con exito" } };
+            try
+            {
+                var SqlResult = await ConnectionBD.Connection.QueryFirstAsync<ClienteDTO>(ClienteQueries.GetClienteByCodigoQuery, new { Codigo = codigo });
+                Result.ResultObject = SqlResult;
+
+            }
+            catch (Exception Ex)
+            {
+                Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta paginada." } };
+            }
+
+
+            return Result;
         }
     }
 }

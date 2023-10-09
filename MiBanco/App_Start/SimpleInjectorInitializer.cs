@@ -4,6 +4,7 @@ namespace MiBanco.App_Start
 {
     using System.Reflection;
     using System.Web.Mvc;
+    using AutoMapper;
     using MiBancoService.Application.Contracts.Services;
     using MiBancoService.Application.Services;
     using MiBancoService.Infrastructure.Connections;
@@ -35,6 +36,10 @@ namespace MiBanco.App_Start
         {
             // For Services
              container.Register<IClienteService, ClienteService>(Lifestyle.Scoped);
+
+            //  container.Register<IMapper, Mapper>(Lifestyle.Scoped);
+
+           //  container.Register<IMapperWrapper, AutoMapperWrapper>(Lifestyle.Scoped);
 
 
             //Repository
