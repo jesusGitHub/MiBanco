@@ -10,3 +10,12 @@ C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastru
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net4.8\MiBancoService.Infrastructure.Contracts.csproj.CopyComplete
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net4.8\MiBancoService.Infrastructure.Contracts.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\obj\Debug\net4.8\MiBancoService.Infrastructure.Contracts.pdb
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net4.8\MiBancoService.Domain.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net4.8\MiBancoService.Domain.pdb
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net4.8\System.Web.Mvc.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net4.8\System.Web.Razor.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net4.8\System.Web.Helpers.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net4.8\System.Web.WebPages.Deployment.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net4.8\System.Web.WebPages.Razor.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net4.8\System.Web.WebPages.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Infrastructure.Contracts\bin\Debug\net4.8\Microsoft.Web.Infrastructure.dll

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Web.Mvc;
 
 namespace MiBancoService.Domain.Models
 {
@@ -13,5 +9,7 @@ namespace MiBancoService.Domain.Models
         public string Banco { get; set; }
         public string Numero { get; set; }
         public int AnioVence { get; set; }
+        public bool Estado { get; set; } = true;
+        public SelectList TipoTarjeta { get; set; }
     }
 }

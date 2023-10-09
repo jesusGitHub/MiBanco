@@ -1,5 +1,6 @@
 ﻿using MiBancoService.Application.Contracts.Services;
 using MiBancoService.Application.DTOs.Responses;
+using MiBancoService.Domain.Utility;
 using MiBancoService.Infrastructure.Contracts.Repositories;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,24 @@ namespace MiBancoService.Application.Services
             _clienteRepository = clienteRepository;
         }
 
-
-        public async Task<IEnumerable<ClienteDTO>> ObtenerCliente()
+        public async Task<OperationResult<ClienteDTO>> GuardarCliente(ClienteDTO dtoCliente)
         {
-           return await  _clienteRepository.ObtenerCliente();
+            var Result = new OperationResult<ClienteDTO>();
 
-            throw new NotImplementedException();
+             Result = await _clienteRepository.GuardarCliente(dtoCliente);
+
+            return Result;
+        }
+
+        public async Task<OperationResult<ClienteDTO>> ObtenerCliente(ClienteDTO dtoCliente)
+        {
+           return await _clienteRepository.ObtenerCliente(dtoCliente);
+
+        }
+
+        public async Task<OperationResult<ClienteDTO>> ObtenerClienteByCodigo(int Codigo)
+        {
+            return await _clienteRepository.ObtenerClienteByCodigo(Codigo);
         }
     }
 }
