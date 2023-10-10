@@ -28,13 +28,14 @@ namespace MiBancoService.Infrastructure.Repositories
 
                 if (SqlResult != null && SqlResult.Any())
                       Result.ResultList = SqlResult.ToList();
-
-                ConnectionBD.CloseConnection();
+              
             }
             catch (Exception Ex)
             {
                 Result = new OperationResult<TarjetaDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta de tarjetas de credito." } };
             }
+
+            ConnectionBD.CloseConnection();
 
             return Result;
 
@@ -55,6 +56,8 @@ namespace MiBancoService.Infrastructure.Repositories
             {
                 Result = new OperationResult<TipoTarjetaDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta de los tipos de credito." } };
             }
+
+            ConnectionBD.CloseConnection();
 
             return Result;
         }
@@ -88,9 +91,10 @@ namespace MiBancoService.Infrastructure.Repositories
 
             }
 
+            ConnectionBD.CloseConnection();
+
             return Result;
 
-            throw new NotImplementedException();
         }
 
 
@@ -111,6 +115,8 @@ namespace MiBancoService.Infrastructure.Repositories
             {
                 Result = new OperationResult<TarjetaDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta de tarjeta por Id" } };
             }
+
+            ConnectionBD.CloseConnection();
 
             return Result;
         }
@@ -133,7 +139,9 @@ namespace MiBancoService.Infrastructure.Repositories
                     Result = new OperationResult<TarjetaDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta de tarjetas por numero." } };
                 }
 
-                return Result;
+            ConnectionBD.CloseConnection();
+
+            return Result;
         }
     }
 }
