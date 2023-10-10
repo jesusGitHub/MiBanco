@@ -2,67 +2,15 @@
 var $divMessages;
 
  
- $(".Mayuscula").keydown( function(){  
-    var value = $(this).val();    
-        if(value.length === 1){
-            $(this).val(value.toUpperCase());
-        }    
-   }); 
-   
+
 
 $(".Telefono").mask("999-999-9999");
 
 $(".Cedula").mask("999-9999999-9");
+
+$(".NumeroTarjeta").mask("9999-9999-9999-9999");
    
-function MostrarMensajeSuccess($div, $message)
-{   
-      $('html, body').animate({scrollTop:0}, 'slow');
-    $divMessages = $div;
 
-    $divMessages.html('');
-
-    var $divToApennd = '<div class="alert alert-success alert-dismissable" >'
-                       +'<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'
-                       +'<span> '+ $message +' </span>'
-                       + '</div>';
-    $divMessages.append($divToApennd);
-    $divMessages.show();
-    setTimeout("cerrar()", 5000);
-}
-
-function MostrarMensajeError($div, $message)
-{
-    $('html, body').animate({scrollTop:0}, 'slow');
-   var $divMessages = $div;
-
-    $divMessages.html('');
-    var $divToApennd = '<div class="alert alert-danger alert-dismissable" >'
-                       + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'
-                       + '<span> ' + $message + ' </span>'
-                       + '</div>';
-
-    $divMessages.append($divToApennd);
-    $divMessages.show();
-
-
-}
-
-function MostrarMensajeInfo($div, $message)
-{
-     $('html, body').animate({scrollTop:0}, 'slow');
-    $divMessages = $div;
-
-    $divMessages.html('');
-    var $divToApennd = '<div class="alert alert-info alert-dismissable" >'
-                       + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>'
-                       + '<span> ' + $message + ' </span>'
-                       + '</div>';
-
-    $divMessages.append($divToApennd);
-    $divMessages.show();
-    setTimeout("cerrar()", 5000);
-
-}
 
 //Cierra todos los alert de notificaciones
 function cerrar() {
@@ -70,26 +18,7 @@ function cerrar() {
 }
 
 
-$(document).ready(function() {
-	
-    //$("form").on("submit", function () {
-    //    $.blockUI({
-    //        css: {
-    //            border: 'none',
-    //            padding: '15px',
-    //            backgroundColor: '#000',
-    //            '-webkit-border-radius': '10px',
-    //            '-moz-border-radius': '10px',
-    //            opacity: .5,
-    //            color: '#fff'
-    //        },
-    //        message: $(".MesajeEspera")
-    //    });
-    //});
 
-   
-	
-});
 
 $(document).ajaxStart(function () {
     $.blockUI({
@@ -156,26 +85,7 @@ function MuestraMensajeEspera($div)
 	
 }
 
-function getFechaActual()
-{
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth()+1; //January is 0!
-        var yyyy = today.getFullYear();
 
-        if(dd<10) {
-            dd='0'+dd
-        } 
-
-        if(mm<10) {
-            mm='0'+mm
-        } 
-
-        today = dd+'/'+mm+'/'+yyyy;
-
-        return today;
-    
-}
 
 $.fn.formSerializeToJson = function(){
     
@@ -200,91 +110,6 @@ $.fn.formSerializeToJson = function(){
     return data;    
 }
 
-
-function Eliminar(action, id, divMessage)
-{
-      bootbox.dialog({
-        message:getFormulario(),
-        title: "<div style='text-align:center; color:blue' > <h3>Muebleria Yovani </h3> </div> ",
-        buttons: {
-            danger: {
-                label: "No Cancelar",
-                className: "btn-primary",
-                callback: function () {
-                    // Example.show("uh oh, look out!");
-                }
-            },
-            main: {
-                label: "Confirmar",
-                className: "btn-danger",
-                callback: function () {
-                  var funcion = action;
-                  var codigo = id;
-                  var div=divMessage;
-                   ejecutarAction(funcion,codigo,div);                   
-                }
-            }
-        }
-    });
-}
-
-
-
-function ejecutarAction(action,id,contentDivMessage)
-{
-      var IsFormValid = $("#frmConfirmarUsuario").valid();
-      var datos = $("#frmConfirmarUsuario").formSerializeToJson();
-
-      var nombreUsuario = $("#txtNombreUsuario").val();
-      var clave = $("#txtClave").val();
-
-        if (IsFormValid) {
-
-            $.ajax({
-                data:{
-                    NombreUsuario: nombreUsuario
-                   ,Clave :clave
-                },
-                type: "POST",
-                dataType: "json",
-                url: ConfirmarUsuarioUrl,
-                beforeSend: function (xhr) {
-
-                }
-            })
-            .done(function (data, textStatus, jqXHR) {
-
-                debugger;
-
-                var datos = data;
-
-                if (datos.Success) {
-                    
-                        if(id !== undefined && id !== null)
-                        {
-                            action(id);
-                        }else{
-                            action();
-                        }
-                    }else{
-                        MostrarMensajeError(contentDivMessage,datos.Message);	
-                    }
-
-                if (console && console.log) {
-                    console.log("La solicitud se ha completado correctamente.");
-                }
-
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-
-          });//Fin de la funcion del ajaxError
-
-        }else{
-            MostrarMensajeError(contentDivMessage, "No se ha podido recopilar informacion suficiente para realizar la operación");
-        }
-}
-
-
-
 function GetMessageFromList(Mensajes) {
     var mnsj = "";
 
@@ -300,7 +125,6 @@ function GetMessageFromList(Mensajes) {
     //});
     return mnsj;
 }
-
 
 function ShowMessage(Result, SuccesFunction, FailFunction)
 {
@@ -328,6 +152,8 @@ function ShowMessage(Result, SuccesFunction, FailFunction)
 
 function GetPartialViewResultConParametros(Url, Content, Modal, Parametros)
 {
+    debugger;
+
     $.ajax({
         data: Parametros,
         type: "POST",

@@ -197,7 +197,11 @@
         "frameworks": {
           "net48": {
             "targetAlias": "net4.8",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\jsoriano\\Documents\\Visual Studio 2019\\Proyect2\\MiBancoService.Application.DTOs\\MiBancoService.Application.DTOs.csproj": {
+                "projectPath": "C:\\Users\\jsoriano\\Documents\\Visual Studio 2019\\Proyect2\\MiBancoService.Application.DTOs\\MiBancoService.Application.DTOs.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

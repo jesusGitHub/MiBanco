@@ -42,7 +42,13 @@
                     role = "form"
                 }))
         {
+
             <div class="row">
+
+
+                @Html.HiddenFor(x => x.Codigo)
+                @Html.HiddenFor(x => x.EstadoActivo)
+
 
                 <div class="col-lg-3">
                     @Html.LabelFor(model => model.Nombre)
@@ -52,14 +58,14 @@
 
                 <div class="col-lg-3">
                     @Html.LabelFor(model => model.Apellido)
-                    @Html.TextBoxFor(model => model.Apellido, new { @class = "form-control Mayuscula" })
+                    @Html.TextBoxFor(model => model.Apellido, new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Apellido, null, new { @class = "label label-danger" })
                 </div>
 
 
                 <div class="col-lg-3">
                     @Html.LabelFor(model => model.NumeroContacto)
-                    @Html.TextBoxFor(model => model.NumeroContacto, new { @class = "form-control Mayuscula" })
+                    @Html.TextBoxFor(model => model.NumeroContacto, new { @class = "form-control Telefono" })
                     @Html.ValidationMessageFor(model => model.NumeroContacto, null, new { @class = "label label-danger" })
                 </div>
 
@@ -73,14 +79,53 @@
                     @Html.ValidationMessageFor(model => model.Ocupacion, null, new { @class = "label label-danger" })
                 </div>
 
+                <div class="col-lg-3">
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Estado)
+                        @Html.DropDownListFor(x => x.Estado, new List<SelectListItem>
+                        {
+                        new SelectListItem { Text = "Activo", Value = "true"},
+                        new SelectListItem { Text = "Inactivo",  Value = "false" },
+                        },
+                        new { @class = "form-control" })
+                    </div>
+                </div>
+
             </div>
 
+            <br />
 
             <div class="row">
-                <div class="col-lg-12">
-                    <div>
-                        <input type="submit" value="Guardar" class="btn btn-outline btn-primary" />
-                    </div>
+                <div class="col-md-4">
+
+
+                    @if (Model.Estado)
+                    {
+
+                        <button class="btn btn-primary btn-cicle"
+                                type="submit">
+                            <i class="fa fa-save"></i> Guardar
+                        </button>
+
+
+                        if (Model.Codigo > 0)
+                        {
+                            <button class="btn btn-primary btn-cicle"
+                                    type="button"
+                                    id="btnAgregarTarjeta">
+                                <i class="fa fa-plus"></i> Agregar tarjeta
+                            </button>
+
+
+                        }
+
+                        <a href="@Url.Action("Index", "Cliente")" class="btn btn-success">  <i class="fa fa-list"></i>  Listado cliente </a>
+
+                    }
+
+
+
                 </div>
             </div>
 
@@ -90,9 +135,92 @@
 </div>
 
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<br />
+
+<!-- ACTIVACION DE USUARIO-->
+@if (!Model.Estado && Model.Codigo > 0)
+{
+
+    using (Ajax.BeginForm("AcivarUsuario", "Cliente",
+                  new AjaxOptions
+                  {
+                      HttpMethod = "POST",
+                      LoadingElementId = "ajaxLoader",
+                      OnSuccess = "onActivarUuarioSucess",
+                      OnFailure = "onfaile",
+                      UpdateTargetId = "alerta"
+                  },
+                  new
+                  {
+                      @id = "AjaxformActivarUsuario",
+                      @class = "form-horizontal",
+                      role = "form"
+                  }))
+    {
+
+        @Html.HiddenFor(x => x.CodigoActivacion)
+
+        <button class="btn btn-warning btn-cicle"
+                type="submit">
+            <i class="fa fa-save"></i> Activar Usuario
+        </button>
+
+    }
+
+}
+
+<br />
+
+
+@if (Model.Codigo > 0)
+{
+    <!--Partial View -->
+
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-bar-chart"></i> Listado de tarjeta.
+        </div>
+        <div class="card-body">
+
+            <div id="contentPartialListadoTarjeta">
+
+                @Html.Partial("Partials/_Tarjetas", Model.TarjetaVMs)
+
+            </div>
+
+
+        </div>
+        <div class="card-footer small text-muted"></div>
+    </div>
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="modal fade" id="modalTarjeta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" style="width:100%">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalTarjeta">Tarjeta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="contentPartialTarjeta">
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 
 
 
@@ -106,20 +234,120 @@
 
     <script type="text/javascript">
 
+        var consultaPaginadaUrl = '@Url.Action("ConsultaCliente", "Cliente")';
+        var CreateClienteUrl = '@Url.Action("Create", "Cliente")';
+        var GetPartialTarjetaUrl = '@Url.Action("GetPartialCreate", "Tarjeta")';
+        var GetPartialListadoTarjetaUrl = '@Url.Action("GetPartialListadoTarjeta", "Cliente")';
+
         function onSucess(Result) {
+
+            debugger;
+            var Value = $("#Codigo").val();
+            ShowMessage(Result);
+
+
+            if (Result.Success) {
+                if (Value <= 0)
+                  document.getElementById("Ajaxformcliente").reset();
+            }
+        }
+
+
+        function onfaile(Result) {
+            ShowMessage(Result);
+        }
+
+        function onActivarUuarioSucess(Result)
+        {
+            debugger;
+           
+            ShowMessage(Result);
+
+
+            if (Result.Success) {
+
+                document.location.reload();
+
+            }
+        }
+
+
+
+        $(document).on("click", "#btnAgregarTarjeta", function () {
+
+            var value = $("#Codigo").val();
+
+            var $modalTarjeta = $("#modalTarjeta");
+            var ContentTarjeta = $("#contentPartialTarjeta");
+            var datos = { CodigoCliente: value };
+
+            GetPartialViewResultConParametros(GetPartialTarjetaUrl, ContentTarjeta, $modalTarjeta, datos);
+        });
+
+        $(document).on("click", ".btnEditarTarjeta", function () {
+
+            var value = $("#Codigo").val();
+            var tarjetaCodigo =  $(this).attr("data-Id");
+
+            var $modalTarjeta = $("#modalTarjeta");
+            var ContentTarjeta = $("#contentPartialTarjeta");
+            var datos = { CodigoCliente: value, CodigoTarjeta : tarjetaCodigo };
+
+            GetPartialViewResultConParametros(GetPartialTarjetaUrl, ContentTarjeta, $modalTarjeta, datos);
+        });
+
+        function onTarjetaSucess(Result) {
 
             debugger;
 
             ShowMessage(Result);
 
+          var PartialVew =   $("#contentPartialListadoTarjeta")
+
             if (Result.Success) {
-                document.getElementById("Ajaxformcliente").reset();
+
+                document.getElementById("Ajaxformtarjeta").reset();
+                var value = $("#Codigo").val();
+                var datos = { CodigoCliente: value };
+                $("#modalTarjeta").modal('hide');
+
+                GetPartialViewResultConParametros(GetPartialListadoTarjetaUrl, PartialVew, null, datos);
+
             }
         }
 
-        function onfaile(Result) {
+        function onTarjetafaile(Result) {
+
             ShowMessage(Result);
+            $("#modalTarjeta").modal('hide');
         }
+
+
+            $(document).ready(function () {
+
+                debugger;
+
+                var Estado =  $("#EstadoActivo").val();
+                var value = $("#Codigo").val();
+
+                if (Estado == false || Estado == "false" || Estado == "False") {
+
+                    if (value != '0')
+                    {
+                        $("#Ajaxformcliente input[type='text']").prop('readonly', true);
+                        $("#Ajaxformcliente input[type='number']").prop('readonly', true);
+                    }                  
+
+                } else {
+                    $("#Ajaxformcliente input[type='text']").prop('readonly', false);
+                    $("#Ajaxformcliente input[type='number']").prop('readonly', false);
+                }
+
+            });
+
+
+
+
 
     </script>
 

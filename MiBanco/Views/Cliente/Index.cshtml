@@ -33,8 +33,7 @@
     </table>
 </div>
 
-
-
+<a href="@Url.Action("Create", "Cliente")" class="btn btn-primary">  <i class="fa fa-plus"></i>  Crear cliente </a>
 
 
 @section Script{
@@ -49,7 +48,8 @@
     <script type="text/javascript">
 
         var consultaPaginadaUrl = '@Url.Action("ConsultaCliente", "Cliente")';
-        
+        var CreateClienteUrl = '@Url.Action("Create", "Cliente")';
+
         $tableCliente = $('#tablaCliente').dataTable({
           paging: true,
           ordering: false,
@@ -69,30 +69,19 @@
               { 'data': "Nombre", 'name': 'Nombre', 'sTitle': 'Nombre' },
               { 'data': "Apellido", 'name': 'Apellido', 'sTitle': 'Apellido' },
               { 'data': "NumeroContacto", 'name': 'NumeroContacto', 'sTitle': 'Numero de Contacto' },
-              { 'data': "Ocupacion", 'name': 'Ocupacion', 'sTitle': 'Ocupación' },              
-              /*{
-                  sTitle: "Vender Producto",
-                  'data': 'AlmacenId',
-                  bSearchable: false,
-                  bSortable: false,
-                  class: 'center',
-                  "mRender": function (data) {
-                      var button = '<a class="btnAddProducto" href="javascript:void(0)"> Agregar a Factura' +
-                          '</a>';
-                      return button;
-                  }
-              },
+              { 'data': "Ocupacion", 'name': 'Ocupacion', 'sTitle': 'Ocupación' },
+              { 'data': "Estado", 'name': 'Estado', 'sTitle': 'Estado' },            
                 {
                     sTitle: "Opción",
-                    'data': 'AlmacenId',
+                    'data': 'Codigo',
                     bSearchable: false,
                     bSortable: false,
                     class: 'center',
                     "mRender": function (data) {
-                        var button = '<a class="" href="' + CrearTransferenciaUrl +"?AlmacenCodigo="+ data +'"> Transferir ' +'</a>';
+                        var button = '<a class="" href="' + CreateClienteUrl +"?Codigo="+ data +'"> Editar Cliente ' +'</a>';
                         return button;
                     }
-                }*/
+                }
           ],
           lengthMenu: [[5, 10, 25, 50], [5, 10, 25, 50]],
           Length: 5

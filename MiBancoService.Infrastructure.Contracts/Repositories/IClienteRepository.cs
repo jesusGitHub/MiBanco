@@ -15,5 +15,7 @@ namespace MiBancoService.Infrastructure.Contracts.Repositories
         Task<OperationResult<ClienteDTO>> GuardarCliente(ClienteDTO dtoCliente);
 
         Task<OperationResult<ClienteDTO>> ObtenerClienteByCodigo(int codigo);
+
+        Task<OperationResult<ClienteDTO>> ActivarUsuario(int codigo);
     }
 }

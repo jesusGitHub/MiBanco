@@ -34,8 +34,9 @@ namespace MiBancoService.Infrastructure.Repositories
                 parameters.Add("Apellido", dtoCliente.Apellido);
                 parameters.Add("NumeroContacto", dtoCliente.NumeroContacto);
                 parameters.Add("Ocupacion", dtoCliente.Ocupacion);
+                parameters.Add("Estado", dtoCliente.Estado);
 
-               var SqlResult = await ConnectionBD.Connection.ExecuteAsync("SPC_GUARDAR_CLIENTE",
+                var SqlResult = await ConnectionBD.Connection.ExecuteAsync("SPC_GUARDAR_CLIENTE",
                    parameters, commandType: System.Data.CommandType.StoredProcedure);
 
                 ConnectionBD.CloseConnection();
@@ -88,11 +89,27 @@ namespace MiBancoService.Infrastructure.Repositories
             }
             catch (Exception Ex)
             {
-                Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta paginada." } };
+                Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta de cliente por codigo." } };
             }
 
 
             return Result;
+        }
+
+        public async Task<OperationResult<ClienteDTO>> ActivarUsuario(int codigo)
+        {
+            var Result = new OperationResult<ClienteDTO>() { Success = true, Messages = new List<string> { "Operacion realiazada con exito" } };
+            try
+            {
+                 await ConnectionBD.Connection.QueryAsync<ClienteDTO>(ClienteQueries.UpdateEstadoClienteQuery, new { ClienteId = codigo });               
+            }
+            catch (Exception Ex)
+            {
+                Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando activación del usuario." } };
+            }
+
+            return Result;
+            throw new NotImplementedException();
         }
     }
 }
