@@ -193,6 +193,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppScript\CreateCliente.js" />
+    <Content Include="AppScript\IndexCliente.js" />
+    <Content Include="App_Data\MiBancoBD.sql" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -494,7 +496,6 @@
     <Content Include="Views\Tarjeta\Partials\_CrearTarjeta.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -17,7 +17,7 @@ namespace MiBancoService.Infrastructure.Queries
                                                           ,T.[MesVence]
                                                           ,T.[AnioVence]
                                                           ,T.[FechaRegistro]      
-                                                      FROM [MiBanco].[dbo].[Tarjeta] T
+                                                      FROM [dbo].[Tarjeta] T
                                                         INNER JOIN [dbo].[TipoTarjeta] AS TP ON T.TipoTarjetaId = TP.TipoTarjetaId
 	                                                    AND ClienteId = @ClienteId";
 
@@ -31,7 +31,7 @@ namespace MiBancoService.Infrastructure.Queries
                                                           ,T.[MesVence]
                                                           ,T.[AnioVence]
                                                           ,T.[FechaRegistro]      
-                                                      FROM [MiBanco].[dbo].[Tarjeta] T
+                                                      FROM [dbo].[Tarjeta] T
                                                         INNER JOIN [dbo].[TipoTarjeta] AS TP ON T.TipoTarjetaId = TP.TipoTarjetaId
 	                                                    AND T.TarjetaId = @TarjetaId";
 
@@ -48,7 +48,7 @@ namespace MiBancoService.Infrastructure.Queries
                                                           ,T.[MesVence]
                                                           ,T.[AnioVence]
                                                           ,T.[FechaRegistro]      
-                                                      FROM [MiBanco].[dbo].[Tarjeta] T
+                                                      FROM [dbo].[Tarjeta] T
                                                         INNER JOIN [dbo].[TipoTarjeta] AS TP ON T.TipoTarjetaId = TP.TipoTarjetaId
 	                                                    AND T.NumeroTarjeta = @NumeroTarjeta";
 

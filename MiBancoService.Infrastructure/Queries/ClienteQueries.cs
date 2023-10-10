@@ -15,7 +15,7 @@ namespace MiBancoService.Infrastructure.Queries
                                                           ,NumeroContacto
                                                           ,Ocupacion  
                                                           ,Estado
-                                                    FROM MiBanco.dbo.Cliente WHERE ClienteId = @Codigo";
+                                                    FROM dbo.Cliente WHERE ClienteId = @Codigo";
 
         public const string GetClientesPaginadoQuery = @" SPC_PAGINACION_CLIENTE  @CampoBusqueda,  @LengthPagina, @NumPagina ";
 

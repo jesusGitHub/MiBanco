@@ -18,9 +18,11 @@ namespace MiBancoService.Domain.Models
         public int Codigo { get; set; }
         public int CodigoActivacion { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
+        [MaxLength(50, ErrorMessage = "El campo {0} no debe contener mas de 50 caracteres")]
         public string Nombre { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
+        [MaxLength(50, ErrorMessage = "El campo {0} no debe contener mas de 50 caracteres")]
         public string Apellido { get; set; }
 
         [DisplayName("Número Contacto")]
@@ -28,11 +30,12 @@ namespace MiBancoService.Domain.Models
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Número de contacto incorrecto")]
         public string NumeroContacto { get; set; }
+        [MaxLength(75, ErrorMessage = "El campo {0} no debe contener mas de 75 caracteres")]
         public string Ocupacion { get; set; }
        
         public bool EstadoActivo { get; set; }
 
-        public bool Estado { get; set; }
+        public bool Estado { get; set; } = true;
 
 
 

@@ -31,7 +31,7 @@ namespace MiBancoService.Domain.Models
 
         [Display(Name = "Año vence")]
         [Required(ErrorMessage = "El campo {0} es requerido")]
-        [Range(2023, 2030, ErrorMessage = "El campo {0} debe tener un valor comprendido entre 2023 y 2030")]
+        [Range(2024, 2030, ErrorMessage = "El campo {0} debe tener un valor comprendido entre 2024 y 2030")]
         public int AnioVence { get; set; } 
         
         public SelectList DDlTipoTarjeta { get; set; }
