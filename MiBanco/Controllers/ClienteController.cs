@@ -90,7 +90,7 @@ namespace MiBanco.Controllers
         }
 
 
-        // GET: Tarjeta/Create
+        // POST: Cliente/GetPartialListadoTarjeta
         [HttpPost]
         public async Task<ActionResult> GetPartialListadoTarjeta(int CodigoCliente = 0)
         {
@@ -145,7 +145,7 @@ namespace MiBanco.Controllers
         }
 
 
-        // POST: Cliente/Create    AcivarUsuario
+        // POST: AcivarUsuario
         [HttpPost]
         public async Task<ActionResult> AcivarUsuario(int CodigoActivacion)
         {

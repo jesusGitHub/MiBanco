@@ -37,20 +37,17 @@ namespace MiBancoService.Infrastructure.Repositories
                 parameters.Add("Estado", dtoCliente.Estado);
 
                 var SqlResult = await ConnectionBD.Connection.ExecuteAsync("SPC_GUARDAR_CLIENTE",
-                   parameters, commandType: System.Data.CommandType.StoredProcedure);
-
-                ConnectionBD.CloseConnection();
+                   parameters, commandType: System.Data.CommandType.StoredProcedure);               
 
             }
             catch (Exception Ex)
             {
                 Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando la operacion." } };
-
             }
 
+            ConnectionBD.CloseConnection();
+
             return Result;
-
-
         }
 
         public async Task<OperationResult<ClienteDTO>> ObtenerCliente(ClienteDTO dtoCliente)
@@ -69,11 +66,14 @@ namespace MiBancoService.Infrastructure.Repositories
                 
                 if(Result.ResultList != null && Result.ResultList.Any() )
                      Result.TotalRecords = SqlResult.FirstOrDefault().TotalRegistro;
+                
             }
             catch (Exception Ex)
             {
                 Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta paginada." } };
             }
+
+            ConnectionBD.CloseConnection();
 
             return Result;
         }
@@ -92,6 +92,7 @@ namespace MiBancoService.Infrastructure.Repositories
                 Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando la consulta de cliente por codigo." } };
             }
 
+            ConnectionBD.CloseConnection();
 
             return Result;
         }
@@ -108,8 +109,9 @@ namespace MiBancoService.Infrastructure.Repositories
                 Result = new OperationResult<ClienteDTO>() { Success = false, Messages = new List<string> { "Error realizando activación del usuario." } };
             }
 
+            ConnectionBD.CloseConnection();
+
             return Result;
-            throw new NotImplementedException();
         }
     }
 }
