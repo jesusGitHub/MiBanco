@@ -6,3 +6,12 @@ C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\ob
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\obj\Debug\net4.8\MiBancoService.Domain.csproj.CoreCompileInputs.cache
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\obj\Debug\net4.8\MiBancoService.Domain.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\obj\Debug\net4.8\MiBancoService.Domain.pdb
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\obj\Debug\net4.8\MiBancoService.Domain.csproj.AssemblyReference.cache
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\System.Web.Mvc.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\System.Web.Razor.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\System.Web.Helpers.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\System.Web.WebPages.Deployment.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\System.Web.WebPages.Razor.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\System.Web.WebPages.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\Microsoft.Web.Infrastructure.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\obj\Debug\net4.8\MiBancoService.Domain.csproj.CopyComplete

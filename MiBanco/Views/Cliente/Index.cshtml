@@ -1,0 +1,105 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_Layout2.cshtml"; ;
+
+}
+
+
+@section Style{
+    <link href="~/Template2/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+}
+
+
+<div id="AlertMessage">
+</div>
+<div class="MesajeEspera" style="display:none">
+    <img src="~/Images/ajax-loader.gif" id="ajaxLoader" />
+    <p> Procesando por favor espere.</p>
+</div>
+
+
+<h4>
+    Listado de cliente
+</h4>
+
+
+<div class="table-responsive" id="">
+    <table id="tablaCliente" class="table table-striped table-bordered table-hover">
+        <thead>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+
+
+
+@section Script{
+
+
+    <script src="~/Scripts/toastr.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="~/Template2/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="~/Template2/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+
+    <script type="text/javascript">
+
+        var consultaPaginadaUrl = '@Url.Action("ConsultaCliente", "Cliente")';
+        
+        $tableCliente = $('#tablaCliente').dataTable({
+          paging: true,
+          ordering: false,
+          searching: true,
+          Processing: true,
+          serverSide: true,
+          paginate: true,
+          ajax: {
+              url: consultaPaginadaUrl,
+              type: 'POST',
+              data: function (d) {
+                  d.Nombre = 'lavadora'
+              }
+          },
+          columns: [
+              { 'data': 'Codigo', 'name': 'Codigo', 'sTitle': 'Codigo' },
+              { 'data': "Nombre", 'name': 'Nombre', 'sTitle': 'Nombre' },
+              { 'data': "Apellido", 'name': 'Apellido', 'sTitle': 'Apellido' },
+              { 'data': "NumeroContacto", 'name': 'NumeroContacto', 'sTitle': 'Numero de Contacto' },
+              { 'data': "Ocupacion", 'name': 'Ocupacion', 'sTitle': 'Ocupación' },              
+              /*{
+                  sTitle: "Vender Producto",
+                  'data': 'AlmacenId',
+                  bSearchable: false,
+                  bSortable: false,
+                  class: 'center',
+                  "mRender": function (data) {
+                      var button = '<a class="btnAddProducto" href="javascript:void(0)"> Agregar a Factura' +
+                          '</a>';
+                      return button;
+                  }
+              },
+                {
+                    sTitle: "Opción",
+                    'data': 'AlmacenId',
+                    bSearchable: false,
+                    bSortable: false,
+                    class: 'center',
+                    "mRender": function (data) {
+                        var button = '<a class="" href="' + CrearTransferenciaUrl +"?AlmacenCodigo="+ data +'"> Transferir ' +'</a>';
+                        return button;
+                    }
+                }*/
+          ],
+          lengthMenu: [[5, 10, 25, 50], [5, 10, 25, 50]],
+          Length: 5
+          //oLanguage: { 'sUrl': dataTableIdiomaURL }
+      });
+
+    </script>
+
+
+}

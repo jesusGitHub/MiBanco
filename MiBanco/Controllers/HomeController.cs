@@ -18,8 +18,7 @@ namespace MiBanco.Controllers
 
         public ActionResult Index()
         {
-            var Result =_clienteService.ObtenerCliente();
-
+           
             return View();
         }
 

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MiBancoService.Application.DTOs\MiBancoService.Application.DTOs.csproj" />
+    <ProjectReference Include="..\MiBancoService.Domain\MiBancoService.Domain.csproj" />
   </ItemGroup>
 
 </Project>
