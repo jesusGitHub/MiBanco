@@ -1,6 +1,7 @@
 ﻿using MiBancoService.Infrastructure.Contracts.Connections;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -18,12 +19,11 @@ namespace MiBancoService.Infrastructure.Connections
         {
 
 
-            //Lo recomendable seria que el connectionString se obtubiera del Environment
-            //Como se ve en este comentario pero como es una prueba  para menos estres lo pondre directamente.
-           
-            //Connection = new SqlConnection(Environment.GetEnvironmentVariable("BancoDB"));
+             //Toma la conexion de base de datos del archivo Web.Config
+            string Conexon = ConfigurationManager.AppSettings["ConectionBB"];
 
-            Connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;User ID=sa;Initial Catalog=MiBanco;Data Source=AFPLPT-91");
+            Connection = new SqlConnection(Conexon);
+
         }
 
 

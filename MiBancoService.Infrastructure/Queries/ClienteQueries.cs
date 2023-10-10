@@ -13,10 +13,14 @@ namespace MiBancoService.Infrastructure.Queries
                                                           ,Nombre
                                                           ,Apellido
                                                           ,NumeroContacto
-                                                          ,Ocupacion                                                    
-                                                    FROM MiBanco.dbo.Cliente WHERE ClienteId = @Codigo";
+                                                          ,Ocupacion  
+                                                          ,Estado
+                                                    FROM dbo.Cliente WHERE ClienteId = @Codigo";
 
         public const string GetClientesPaginadoQuery = @" SPC_PAGINACION_CLIENTE  @CampoBusqueda,  @LengthPagina, @NumPagina ";
+
+
+        public const string UpdateEstadoClienteQuery = @" UPDATE [dbo].[Cliente] SET  Estado = 1 WHERE ClienteId = @ClienteId ";
 
 
     }

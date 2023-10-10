@@ -36,16 +36,18 @@ namespace MiBanco.App_Start
         {
             // For Services
              container.Register<IClienteService, ClienteService>(Lifestyle.Scoped);
+             container.Register<ITarjetaService, TarjetaService>(Lifestyle.Scoped);
 
             //  container.Register<IMapper, Mapper>(Lifestyle.Scoped);
 
-           //  container.Register<IMapperWrapper, AutoMapperWrapper>(Lifestyle.Scoped);
+            //  container.Register<IMapperWrapper, AutoMapperWrapper>(Lifestyle.Scoped);
 
 
             //Repository
             container.Register<IClienteRepository, ClienteRepository>(Lifestyle.Scoped);
+            container.Register<ITarjetaRepository, TarjetaRepository>(Lifestyle.Scoped);
 
-            
+
         }
     }
 }

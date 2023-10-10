@@ -12,5 +12,7 @@ namespace MiBancoService.Application.Contracts.Services
         Task<OperationResult<ClienteDTO>> ObtenerCliente(ClienteDTO dtoCliente);
 
         Task<OperationResult<ClienteDTO>> ObtenerClienteByCodigo(int Codigo);
+
+        Task<OperationResult<ClienteDTO>> ActivarUsuario(int Codigo);
     }
 }

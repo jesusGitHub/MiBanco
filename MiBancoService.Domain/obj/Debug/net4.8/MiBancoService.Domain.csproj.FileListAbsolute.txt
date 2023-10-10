@@ -15,3 +15,5 @@ C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bi
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\System.Web.WebPages.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\Microsoft.Web.Infrastructure.dll
 C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\obj\Debug\net4.8\MiBancoService.Domain.csproj.CopyComplete
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\MiBancoService.Application.DTOs.dll
+C:\Users\jsoriano\Documents\Visual Studio 2019\Proyect2\MiBancoService.Domain\bin\Debug\net4.8\MiBancoService.Application.DTOs.pdb

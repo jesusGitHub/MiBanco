@@ -1,0 +1,14 @@
+
+
+
+.Error{
+	color: red;
+	display:none;
+}
+
+.error{
+   color:red; 
+}
+.field-validation-error {
+color:red;
+}
