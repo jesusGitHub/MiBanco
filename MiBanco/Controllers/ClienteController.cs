@@ -17,10 +17,12 @@ namespace MiBanco.Controllers
     {
 
         private readonly IClienteService _clienteService;
+        private readonly ITarjetaService _tarjetaService;
 
-        public ClienteController(IClienteService clienteService) 
+        public ClienteController(IClienteService clienteService, ITarjetaService tarjetaService) 
         {
             _clienteService = clienteService;
+            _tarjetaService = tarjetaService;
         }
 
 
@@ -51,6 +53,7 @@ namespace MiBanco.Controllers
                           ,datos.Apellido
                           ,datos.NumeroContacto
                           ,datos.Ocupacion
+                          ,Estado = datos.Estado ? "Activo" : "Inactivo"
                        }
 
             }, JsonRequestBehavior.AllowGet);
@@ -60,19 +63,13 @@ namespace MiBanco.Controllers
         {
             var vistaAlmacen = new ClienteDTO
             {
-                start = MiBancoService.Domain.Utility.Utils.CalculaNumeroPagina(int.Parse(Vm.start), Vm.length).ToString()
+                start = Utils.CalculaNumeroPagina(int.Parse(Vm.start), Vm.length).ToString()
                ,length = Vm.length
                ,Nombre = Vm.Nombre
             };
             return vistaAlmacen;
         }
 
-
-        // GET: Cliente/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
 
         // GET: Cliente/Create
         [HttpGet]
@@ -83,20 +80,51 @@ namespace MiBanco.Controllers
             if (Codigo > 0)
             {
                 var Result = await _clienteService.ObtenerClienteByCodigo(Codigo);
-                Vm = ConvertToClienteVm(Result.ResultObject);
+                var ResultTarjeta = await _tarjetaService.ObtenerTarjetaByCliente(Codigo);
+                var ListTarjeta = ConvertVM.ConvertToTarjetaVm(ResultTarjeta.ResultList);
+                Vm = ConvertVM.ConvertToClienteVm(Result.ResultObject);
+                Vm.TarjetaVMs = ListTarjeta;
             }
             
             return View("CreateCliente",Vm);
         }
 
-        // POST: Cliente/Create
+
+        // GET: Tarjeta/Create
+        [HttpPost]
+        public async Task<ActionResult> GetPartialListadoTarjeta(int CodigoCliente = 0)
+        {
+            var Vm = new List<TarjetaVM>();
+
+            var Result = await _tarjetaService.ObtenerTarjetaByCliente(CodigoCliente);
+            var ListTarjeta = ConvertVM.ConvertToTarjetaVm(Result.ResultList);
+
+
+            return PartialView("Partials/_Tarjetas", ListTarjeta);
+        }
+
+
+        // POST: Cliente/Create 
         [HttpPost]
         public async Task<ActionResult> Create(ClienteVM Vm)
         {
-            
-            var DtoCliente = ConvertToClienteDto(Vm);
+            var Result = new OperationResult<ClienteDTO>();
 
-              var Result = await _clienteService.GuardarCliente(DtoCliente);
+            if(Vm.Codigo > 0)
+                 Result = await _clienteService.ObtenerClienteByCodigo(Vm.Codigo);
+
+            ValidaCreacionCliente(Result.ResultObject);
+
+            if (ModelState.IsValid)
+            {
+                var DtoCliente = ConvertVM.ConvertToClienteDto(Vm);
+                Result = await _clienteService.GuardarCliente(DtoCliente);
+            }
+            else {
+                Result.Success = false;
+                Result.Warning = true;
+                Result.Messages = Utils.GetModelStateMessage(ModelState);
+            }
 
             return Json(new
             {
@@ -107,74 +135,31 @@ namespace MiBanco.Controllers
           
         }
 
-        public ClienteVM ConvertToClienteVm(ClienteDTO Vm)
+        public void ValidaCreacionCliente(ClienteDTO Dto)
         {
-            return new ClienteVM
+            if (Dto != null)
             {
-                Codigo = Vm.Codigo,
-                Nombre = Vm.Nombre,
-                Apellido = Vm.Apellido,
-                Ocupacion = Vm.Ocupacion,
-                NumeroContacto = Vm.NumeroContacto             
-            };        
-        }
-
-        public ClienteDTO ConvertToClienteDto(ClienteVM Vm)
-        {
-            return new ClienteDTO
-            {
-                Codigo = Vm.Codigo,
-                Nombre = Vm.Nombre,
-                Apellido = Vm.Apellido,
-                Ocupacion = Vm.Ocupacion,
-                NumeroContacto = Vm.NumeroContacto
-            };
+                if (!Dto.Estado)
+                    ModelState.AddModelError(nameof(Dto.Estado), "Estimado usuario el cliente que está intentando actualizar se encuentra INACTIVO, favor recargue la página nuevamente para poder activarlo. ");
+            }
         }
 
 
-
-        // GET: Cliente/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Cliente/Edit/5
+        // POST: Cliente/Create    AcivarUsuario
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public async Task<ActionResult> AcivarUsuario(int CodigoActivacion)
         {
-            try
-            {
-                // TODO: Add update logic here
+   
+            var Result = await _clienteService.ActivarUsuario(CodigoActivacion);
 
-                return RedirectToAction("Index");
-            }
-            catch
+            return Json(new
             {
-                return View();
-            }
+                Result.Success,
+                Result.Warning,
+                Result.Messages
+            }, JsonRequestBehavior.AllowGet);
+
         }
 
-        // GET: Cliente/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Cliente/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

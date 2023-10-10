@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+964pV5jILz3xyrKCIESkJC55uGHkjtZsII45IoJt5aashQ2uRywu3bH6dmsyVGZTpFTkKggHSaXQyK333hqHw==",
+  "dgSpecHash": "GWf0UCmb1x4k6MhGism6/dnmmYy78nBQqMaC4Zcj9APhrSPK1zPJhhp2uQ55VGWi2lBGzSlju7nOYEzs6uPyUQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jsoriano\\Documents\\Visual Studio 2019\\Proyect2\\MiBancoService.Application.Contracts\\MiBancoService.Application.Contracts.csproj",
   "expectedPackageFiles": [

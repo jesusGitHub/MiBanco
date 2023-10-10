@@ -1,0 +1,100 @@
+﻿@model MiBancoService.Domain.Models.TarjetaVM
+
+
+
+<h2>Creacion de Tarjetas</h2>
+
+<div class="MesajeEspera" style="display:none">
+    <img src="~/Images/ajax-loader.gif" id="ajaxLoader" />
+    <p> Procesando por favor espere.</p>
+</div>
+
+
+<div class="card mb-5">
+    <div class="card-header">
+        <i class="fa fa-bar-chart"></i> Registre la información del cliente.
+    </div>
+    <div class="card-body">
+
+        @using (Ajax.BeginForm("Create", "Tarjeta",
+                new AjaxOptions
+                {
+                    HttpMethod = "POST",
+                    LoadingElementId = "ajaxLoader",
+                    OnSuccess = "onTarjetaSucess",
+                    OnFailure = "onTarjetafaile",
+                    UpdateTargetId = "alerta"
+                },
+                new
+                {
+                    @id = "Ajaxformtarjeta",
+                    @class = "form-horizontal",
+                    role = "form"
+                }))
+        {
+        <div class="row">
+
+            @Html.HiddenFor(x => x.CodigoTarjeta)
+            @Html.HiddenFor(x => x.CodigoCliente)
+
+            <div class="col-lg-3">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TipoTarjetaId)
+                    @Html.DropDownListFor(x => x.TipoTarjetaId, Model.DDlTipoTarjeta != null ?
+                    Model.DDlTipoTarjeta : Enumerable.Empty<SelectListItem>(),
+                    " - Seleccione", new { @class = "form-control" }
+                   )
+                    @Html.ValidationMessageFor(model => model.TipoTarjetaId)
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                @Html.LabelFor(model => model.Banco)
+                @Html.TextBoxFor(model => model.Banco, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Banco, null, new { @class = "label label-danger" })
+            </div>
+
+            <div class="col-lg-4">
+                @Html.LabelFor(model => model.Numero)
+                @Html.TextBoxFor(model => model.Numero, new { @class = "form-control NumeroTarjeta" })
+                @Html.ValidationMessageFor(model => model.Numero, null, new { @class = "label label-danger" })
+            </div>
+
+        </div>
+
+            <div class="row">
+
+                <div class="col-lg-3">
+                    @Html.LabelFor(model => model.MesVence)
+                    @Html.TextBoxFor(model => model.MesVence, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MesVence, null, new { @class = "label label-danger" })
+                </div>
+
+                <div class="col-lg-3">
+                    @Html.LabelFor(model => model.AnioVence)
+                    @Html.TextBoxFor(model => model.AnioVence, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.AnioVence, null, new { @class = "label label-danger" })
+                </div>
+                             
+
+            </div>
+
+
+
+
+            <br />
+
+
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div>
+                        <input type="submit" value="Guardar" class="btn btn-outline btn-primary" />
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="card-footer small text-muted"></div>
+</div>

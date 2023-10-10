@@ -39,5 +39,11 @@ namespace MiBancoService.Application.Services
         {
             return await _clienteRepository.ObtenerClienteByCodigo(Codigo);
         }
+
+        public async Task<OperationResult<ClienteDTO>> ActivarUsuario(int Codigo)
+        {
+            return await _clienteRepository.ActivarUsuario(Codigo);
+            
+        }
     }
 }
